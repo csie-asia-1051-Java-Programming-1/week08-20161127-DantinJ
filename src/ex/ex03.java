@@ -6,11 +6,33 @@
  * Author: 1050210XX 周永振老師
  */
 
+import java.util.Scanner;
+
 public class ex03 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner scn = new Scanner(System.in);
+		System.out.println("初始進位");
+		int x=scn.nextInt();
+		System.out.println("轉換進位");
+		int y=scn.nextInt();
+		float n = scn.nextFloat();
+		String b = "";
+		int a=0;
+		int z=0;
+		int s=0;
+		while(n>0){
+			a=(int)n%10;
+			z=(int) (a*Math.pow(x,s));
+			s++;
+			n=n/10;
+		}System.out.println(n);System.out.println(a);System.out.println(z);
+		while(z>=1){
+			b=Integer.toString((int)(z%y))+b;
+			z=z/y;
+		}
+		System.out.println(z);System.out.println(b);
 	}
 
 }
